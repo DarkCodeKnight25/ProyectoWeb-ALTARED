@@ -1,11 +1,13 @@
 const productoServise = require("../service/productoservice");
 const fs = require('fs');
-const encode = require('node-base64-image').encode;
-const decode = require('node-base64-image').decode;
+const multer = require("multer");
+// const encode = require('node-base64-image').encode;
+// const decode = require('node-base64-image').decode;
 
 const crearProducto = async(req, res)=>{
     try{    
         const {nombre, idproveedor, marca, modelo, color, costo, precio, stock, estado, descripcion, name_file} = req.body;
+        
         // Extraer la cabecera del data url
         const base64Data = name_file.replace(/^data:image\/jpeg;base64,/, '');
         const options = {
@@ -16,7 +18,7 @@ const crearProducto = async(req, res)=>{
         };
         // Generar un nombre único para el archivo
         const imagen = `imagen_${Date.now()}.jpg`;
-        //const imagen = await encode(`imagen_${Date.now()}.jpg`, options); ;
+        // const imagen = await encode(`imagen_${Date.now()}.jpg`, options); ;
         // Guardar la imagen en disco
         fs.writeFile(`uploads/${imagen}`, base64Data, 'base64', (err) => {        
             if (err) {
@@ -25,6 +27,7 @@ const crearProducto = async(req, res)=>{
             }
             console.log('Imagen guardada con éxito:', imagen);
         });
+        
         const producto =  await productoServise.crearProducto(nombre, idproveedor, marca, modelo, color, costo, precio, stock, estado, descripcion, imagen);
         res.status(200).json(producto);
     }catch(excpetion){
