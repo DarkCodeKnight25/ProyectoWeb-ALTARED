@@ -16,6 +16,8 @@
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <script src="js/html5shiv.min.js"></script>
     <![endif]-->
+
+    
   </head>
   <body>
     <div class="preloader">
@@ -194,81 +196,10 @@
 
 <!-- Our Shop-->
 <section class="section section-lg bg-default">
-    <div class="container">
-      <!-- <h3 class="oh-desktop"><span class="d-inline-block wow slideInUp">Selecionar Producto</span></h3> -->
-      <div class="row row-lg row-30">
-        <div class="col-sm-6 col-lg-4 col-xl-3">
-          <!-- Product-->
-          <article class="product wow fadeInLeft" data-wow-delay=".15s">
-            <div class="product-figure"><img src="./img/product-1-161x162.png" alt="" width="161" height="162"/>
-            </div>
-            <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star text-gray-13"></span>
-            </div>
-            <h6 class="product-title">Collagsure Flex 500G</h6>
-            <div class="product-price-wrap">
-              <div class="product-price">S/28.00</div>
-            </div>
-            <div class="product-button">
-              <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Añadir a Tarjeta</a></div>
-              <div class="button-wrap"><a class="button button-xs button-secondary button-winona" href="./img/Producto/colagsureflex.jpg" data-lightgallery="item">Ver Producto</a></div>
-            </div>
-          </article>
-        </div>
-        <div class="col-sm-6 col-lg-4 col-xl-3">
-          <!-- Product-->
-          <article class="product wow fadeInLeft" data-wow-delay=".1s">
-            <div class="product-figure"><img src="./img/product-2-161x162.png" alt="" width="161" height="162"/>
-            </div>
-            <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
-            </div>
-            <h6 class="product-title">Visionsure 100CPS</h6>
-            <div class="product-price-wrap">
-              <div class="product-price">S/35.00</div>
-            </div>
-            <div class="product-button">
-              <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Añadir a Tarjeta</a></div>
-              <div class="button-wrap"><a class="button button-xs button-secondary button-winona" href="#">Ver Producto</a></div>
-            </div><span class="product-badge product-badge-new">Nuevo</span>
-          </article>
-        </div>
-        <div class="col-sm-6 col-lg-4 col-xl-3">
-          <!-- Product-->
-          <article class="product wow fadeInLeft" data-wow-delay=".05s">
-            <div class="product-figure"><img src="./img/product-3-161x162.png" alt="" width="161" height="162"/>
-            </div>
-            <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star text-gray-13"></span>
-            </div>
-            <h6 class="product-title">Collagsure Puro 500G</h6>
-            <div class="product-price-wrap">
-              <div class="product-price">S/27.00</div>
-            </div>
-            <div class="product-button">
-              <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Añadir a Tarjeta</a></div>
-              <div class="button-wrap"><a class="button button-xs button-secondary button-winona" href="./img/Producto/colagsurepuro500g.jpg" data-lightgallery="item">Ver Producto</a></div>
-            </div>
-          </article>
-        </div>
-        <div class="col-sm-6 col-lg-4 col-xl-3">
-          <!-- Product-->
-          <article class="product wow fadeInLeft">
-            <div class="product-figure"><img src="./img/product-4-161x162.png" alt="" width="161" height="162"/>
-            </div>
-            <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
-            </div>
-            <h6 class="product-title">Collagsure-Q10 500G</h6>
-            <div class="product-price-wrap">
-              <div class="product-price product-price-old">S/40.00</div>
-              <div class="product-price">S/24.00</div>
-            </div>
-            <div class="product-button">
-              <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Añadir a Tarjeta</a></div>
-              <div class="button-wrap"><a class="button button-xs button-secondary button-winona" href="./img/Producto/colagsureq10.jpg" data-lightgallery="item">Ver Producto</a></div>
-            </div><span class="product-badge product-badge-sale">Descuento</span>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="contenedor-items">
+      <div id="ListaProducto"></div>
+  </div>
+</section>
 
 
 <!-- Section CTA-->
@@ -388,5 +319,6 @@
     <!-- Javascript-->
     <script src="./js/core.min.js"></script>
     <script src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/producto.js"></script>
   </body>
 </html>

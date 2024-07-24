@@ -37,6 +37,7 @@ function guardarProducto(){
         }
     });
 }
+
 function actualizarProducto(){
     $.ajax({
         url: "../api/productos/"+$('#txtId').val(),
@@ -220,4 +221,97 @@ function listarProducto(){
 
 listarProducto();
 
+function listadoProductos(){
+    $.ajax({
+        url: "../api/productos/activos",
+        type: "GET",
+        data: {
+        },
+        success: function(result) {
+            let lista=null;
+            if (Array.isArray(result)) {
+                lista = result;
+            } else {
+                lista = JSON.parse(result);
+            }
+            let listProduct = $("#ListaProducto");          
+            listProduct.empty();
+            lista.forEach(function (elemento) {
+                let fila = "<div class='item'>"+                                 
+                                 "<span class='titulo-item'>"+elemento.nombre+"</span>"+
+                                 "<img src='Detalles/1.jpg' alt='' class='img-item'>"+
+                                 "<span class='precio-item'> S/ "+elemento.precio+"</span>"+
+                                 "<button class='boton-item'>Agregar al Carrito</button>"+
+                             "</div>";
+                listProduct.append(fila);
+            });
+        }
+    });
+}
+listadoProductos();
 
+function listadoProductos(){
+    $.ajax({
+        url: "../api/productos/activos",
+        type: "GET",
+        data: {},
+        success: function(result) {
+            let lista = null;
+            if (Array.isArray(result)) {
+                lista = result;
+            } else {
+                lista = JSON.parse(result);
+            }
+            let listProduct = $("#ListaProducto");
+            listProduct.empty();
+            
+            // Crear una fila
+            let fila = "<div class='row row-lg row-30'>";
+
+            lista.forEach(function (elemento) {
+                fila += "<div class='col-sm-6 col-lg-4 col-xl-3'>"+
+                            "<article class='product wow fadeInLeft' data-wow-delay='.15s'>"+
+                            "<div class='product-figure'><img src='./img/product-1-161x162.png' alt='' width='161' height='162' class='img-item'/>"+
+                            "</div>"+
+                            "<div class='product-rating'><span class='mdi mdi-star'></span><span class='mdi mdi-star'></span><span class='mdi mdi-star'></span><span class='mdi mdi-star'></span><span class='mdi mdi-star'></span>"+
+                            "</div>"+
+                            "<h6 class='product-title'>"+elemento.nombre+"</h6>"+
+                            "<div class='product-price-wrap'>"+
+                            "<div class='product-price'>S/ "+elemento.precio+"</div>"+
+                            "</div>"+
+                            "<div class='product-button'>"+
+                            "<div class='button-wrap'><a class='button button-xs button-primary button-winona' href='#'>Añadir al carrito</a></div>"+
+                            "<div class='button-wrap'><a class='button button-xs button-secondary button-winona' href='./img/Producto/colagsureflex.jpg' data-lightgallery='item'>Ver Producto</a></div>"+
+                            "</div>"+
+                            "</article>"+
+                            "</div>";
+            });
+
+            // Cerrar la fila
+            fila += "</div>";
+            
+            // Añadir la fila al contenedor
+            listProduct.append(fila);
+        }
+    });
+}
+listadoProductos();
+
+
+
+
+        
+          
+          
+            
+            
+            
+            
+           
+           
+              
+            
+            
+              
+              
+            

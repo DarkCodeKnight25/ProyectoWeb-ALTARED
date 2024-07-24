@@ -1,5 +1,7 @@
 //Dependencias del Proyecto Altared
 const express = require('express');
+const multer = require('multer');
+const path = require('path');
 const app = express();
 const session = require("express-session");
 
@@ -14,6 +16,7 @@ const clienteRoter= require('./router/clienteRoter');
 
 //Aqui estan las credenciales de conexcion
 require("dotenv").config({ path: "./properties.env" });
+app.use('/uploads', express.static('uploads')); 
 
 
 //+++INICIO CONFIGURACION DEL BACKEND+++//
